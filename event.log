@@ -1,0 +1,377 @@
+10.20.128.96 1433 10.20.128.96 1433 auth 4(UMSSQLServerK
+10.20.128.96 1433 10.20.128.96 1433 sql SELECT @@SPID
+10.20.128.96 1433 10.20.128.96 1433 sql SET DATEFORMAT ymd
+10.20.128.96 1433 10.20.128.96 1433 sql  USE [master]
+10.20.128.96 1433 10.20.128.96 1433 sql SET DATEFORMAT ymd
+10.20.128.96 1433 10.20.128.96 1433 sql  USE [master]
+10.20.128.96 1433 10.20.128.96 1433 sql SELECT SERVERPROPERTY('ProductLevel') AS ProductLevel, SERVERPROPERTY('Edition') AS Edition
+10.20.128.96 1433 10.20.128.96 1433 sql SELECT host_platform AS HostPlatform FROM sys.dm_os_host_info
+10.20.128.96 1433 10.20.128.96 1433 sql SET DATEFORMAT ymd
+10.20.128.96 1433 10.20.128.96 1433 sql  USE [master]
+10.20.128.96 1433 10.20.128.96 1433 sql SELECT d.name db_name, d.database_id, d.state, d.user_access, d.is_read_only, d.collation_name FROM sys.databases d
+10.20.128.96 1433 10.20.128.96 1433 auth 4(UMSSQLServerK
+10.20.128.96 1433 10.20.128.96 1433 sql SELECT @@SPID
+10.20.128.96 1433 10.20.128.96 1433 sql SET DATEFORMAT ymd
+10.20.128.96 1433 10.20.128.96 1433 sql  USE [master]
+10.20.128.96 1433 10.20.128.96 1433 sql SET DATEFORMAT ymd
+10.20.128.96 1433 10.20.128.96 1433 sql  USE [master]
+10.20.128.96 1433 10.20.128.96 1433 sql SELECT SERVERPROPERTY('ProductLevel') AS ProductLevel, SERVERPROPERTY('Edition') AS Edition
+10.20.128.96 1433 10.20.128.96 1433 sql SELECT host_platform AS HostPlatform FROM sys.dm_os_host_info
+10.20.128.96 1433 10.20.128.96 1433 sql SET DATEFORMAT ymd
+10.20.128.96 1433 10.20.128.96 1433 sql  USE [master]
+10.20.128.96 1433 10.20.128.96 1433 sql SELECT d.name db_name, d.database_id, d.state, d.user_access, d.is_read_only, d.collation_name FROM sys.databases d
+10.20.128.96 1433 10.20.128.96 1433 sql SET DATEFORMAT ymd
+10.20.128.96 1433 10.20.128.96 1433 sql USE [TestDB3]
+10.20.128.96 1433 10.20.128.96 1433 sql SET DATEFORMAT ymd
+10.20.128.96 1433 10.20.128.96 1433 sql USE [TestDB3]
+10.20.128.96 1433 10.20.128.96 1433 sql SELECT s.name AS name FROM sys.schemas s LEFT JOIN sys.database_principals dp ON dp.principal_id = s.principal_id LEFT JOIN sys.extended_properties p ON p.class = 3 AND p.major_id = s.schema_id AND p.minor_id = 0 AND p.name = 'MS_Description' ORDER BY s.name ASC
+10.20.128.96 1433 10.20.128.96 1433 sql SET DATEFORMAT ymd
+10.20.128.96 1433 10.20.128.96 1433 sql USE [TestDB3]
+10.20.128.96 1433 10.20.128.96 1433 sql @SELECT COUNT(*) FROM information_schema.TABLES UNION SELECT COUNT(*) FROM information_schema.COLUMNS UNION SELECT COUNT(*) FROM information_schema.ROUTINES 
+10.20.128.96 1433 10.20.128.96 1433 sql SET DATEFORMAT ymd
+10.20.128.96 1433 10.20.128.96 1433 sql USE [TestDB3]
+10.20.128.96 1433 10.20.128.96 1433 sql SELECT TABLE_SCHEMA, TABLE_NAME, TABLE_TYPE FROM INFORMATION_SCHEMA.TABLES  ORDER BY TABLE_SCHEMA, TABLE_TYPE
+10.20.128.96 1433 10.20.128.96 1433 sql SELECT TABLE_SCHEMA, TABLE_NAME, COLUMN_NAME, DATA_TYPE FROM INFORMATION_SCHEMA.COLUMNS  ORDER BY TABLE_SCHEMA, TABLE_NAME
+10.20.128.96 1433 10.20.128.96 1433 sql SELECT DISTINCT ROUTINE_SCHEMA, ROUTINE_NAME , STUFF(    (SELECT ', ' + DATA_TYPE + ' ' + PARAMETER_NAME    FROM INFORMATION_SCHEMA.PARAMETERS    WHERE SPECIFIC_SCHEMA = ROUTINES.ROUTINE_SCHEMA AND SPECIFIC_NAME = ROUTINE_NAME    ORDER BY SPECIFIC_SCHEMA, SPECIFIC_NAME, ORDINAL_POSITION    FOR XML PATH(''),TYPE).value('(./text())[1]', 'VARCHAR(MAX)'), 1, 2, '' ) ObjectInfo  FROM INFORMATION_SCHEMA.ROUTINES  GROUP BY ROUTINE_SCHEMA, ROUTINE_NAME ORDER BY ROUTINE_SCHEMA
+127.0.0.1 50279 10.20.128.96 1433 auth 4(UMSSQLServerK
+127.0.0.1 50279 10.20.128.96 1433 sql SELECT @@SPID
+127.0.0.1 50279 10.20.128.96 1433 sql SET DATEFORMAT ymd
+127.0.0.1 50279 10.20.128.96 1433 sql  USE [master]
+127.0.0.1 53630 127.0.0.1 3307 auth b'roottttt'
+127.0.0.1 53687 127.0.0.1 3307 auth b'roottttt'
+127.0.0.1 53723 127.0.0.1 3307 auth b'root'
+127.0.0.1 53874 127.0.0.1 3307 auth b'root'
+127.0.0.1 54051 127.0.0.1 3307 auth root
+127.0.0.1 54358 127.0.0.1 3307 auth root
+127.0.0.1 54503 127.0.0.1 3307 auth root
+127.0.0.1 54595 127.0.0.1 3307 auth root
+127.0.0.1 54832 127.0.0.1 3307 auth root
+127.0.0.1 54933 127.0.0.1 3307 auth root
+127.0.0.1 55610 127.0.0.1 3307 auth root
+127.0.0.1 55610 127.0.0.1 3307 sql select @@version_comment limit 1
+127.0.0.1 55610 127.0.0.1 3307 sql create database test
+127.0.0.1 55610 127.0.0.1 3307 sql create database test2
+127.0.0.1 55610 127.0.0.1 3307 sql exit
+127.0.0.1 65127 127.0.0.1 3307 auth root
+127.0.0.1 65127 127.0.0.1 3307 sql select @@version_comment limit 1
+127.0.0.1 65127 127.0.0.1 3307 sql show databases
+127.0.0.1 65127 127.0.0.1 3307 sql SELECT DATABASE()
+127.0.0.1 65127 127.0.0.1 3307 sql use mysql
+127.0.0.1 65127 127.0.0.1 3307 sql show tables
+127.0.0.1 65127 127.0.0.1 3307 sql desc user
+127.0.0.1 65127 127.0.0.1 3307 sql desc user
+127.0.0.1 65127 127.0.0.1 3307 sql select COLUMN_NAME from information_schema.COLUMNS where table_name = 'your_table_name'
+127.0.0.1 65127 127.0.0.1 3307 sql create database test3
+127.0.0.1 65127 127.0.0.1 3307 sql drop test3
+127.0.0.1 65127 127.0.0.1 3307 sql drop database test3
+127.0.0.1 65127 127.0.0.1 3307 sql SELECT DATABASE()
+127.0.0.1 65127 127.0.0.1 3307 sql drop database test2
+127.0.0.1 65127 127.0.0.1 3307 sql SELECT DATABASE()
+127.0.0.1 65127 127.0.0.1 3307 sql DBCC DROPCLEANBUFFERS
+127.0.0.1 65127 127.0.0.1 3307 sql show fields from test1
+127.0.0.1 65127 127.0.0.1 3307 sql show fields from user
+127.0.0.1 65127 127.0.0.1 3307 sql flush
+127.0.0.1 53065 127.0.0.1 3307 auth root
+127.0.0.1 53065 127.0.0.1 3307 sql select @@version_comment limit 1
+127.0.0.1 53065 127.0.0.1 3307 sql show databases
+127.0.0.1 53065 127.0.0.1 3307 sql SELECT DATABASE()
+127.0.0.1 53065 127.0.0.1 3307 sql use mysql
+127.0.0.1 53065 127.0.0.1 3307 sql select * from user
+127.0.0.1 53065 127.0.0.1 3307 sql desc user
+127.0.0.1 53065 127.0.0.1 3307 sql help 'contents'
+127.0.0.1 51909 10.50.121.30 3307 auth root
+127.0.0.1 51909 10.50.121.30 3307 sql select @@version_comment limit 1
+127.0.0.1 51909 10.50.121.30 3307 sql show databases
+127.0.0.1 51909 10.50.121.30 3307 sql exit
+127.0.0.1 52992 10.50.121.30 3307 auth root
+127.0.0.1 52992 10.50.121.30 3307 sql select @@version_comment limit 1
+127.0.0.1 52992 10.50.121.30 3307 sql show databases
+127.0.0.1 52992 10.50.121.30 3307 sql SELECT DATABASE()
+127.0.0.1 52992 10.50.121.30 3307 sql use information_schema
+127.0.0.1 52992 10.50.121.30 3307 sql show tables
+127.0.0.1 52992 10.50.121.30 3307 sql select * from VIEWS
+127.0.0.1 53648 10.50.121.30 3307 auth root
+127.0.0.1 53648 10.50.121.30 3307 sql SET AUTOCOMMIT = 0
+127.0.0.1 53648 10.50.121.30 3307 sql SELECT * FROM VIEWS;
+127.0.0.1 53648 10.50.121.30 3307 sql COMMIT
+127.0.0.1 53648 10.50.121.30 3307 sql exit
+127.0.0.1 53740 10.50.121.30 3307 auth root
+127.0.0.1 53740 10.50.121.30 3307 sql SET AUTOCOMMIT = 0
+127.0.0.1 53740 10.50.121.30 3307 sql SELECT * FROM VIEWS;
+127.0.0.1 53740 10.50.121.30 3307 sql COMMIT
+127.0.0.1 51659 10.50.121.30 27018 sql [{"isMaster": 1, "client": {"application": {"name": "MongoDB Shell"}, "driver": {"name": "MongoDB Internal Client", "version": "3.6.4"}, "os": {"type": "Darwin", "name": "Mac OS X", "architecture": "x86_64", "version": "21.4.0"}}}]
+127.0.0.1 60003 10.50.121.30 27018 sql [{"isMaster": 1, "client": {"application": {"name": "MongoDB Shell"}, "driver": {"name": "MongoDB Internal Client", "version": "3.6.4"}, "os": {"type": "Darwin", "name": "Mac OS X", "architecture": "x86_64", "version": "21.4.0"}}}]
+127.0.0.1 60720 10.50.121.30 27018 sql [{"isMaster": 1, "client": {"application": {"name": "MongoDB Shell"}, "driver": {"name": "MongoDB Internal Client", "version": "3.6.4"}, "os": {"type": "Darwin", "name": "Mac OS X", "architecture": "x86_64", "version": "21.4.0"}}}]
+127.0.0.1 60720 10.50.121.30 27018 sql [{"whatsmyuri": 1, "$db": "admin"}]
+127.0.0.1 60720 10.50.121.30 27018 sql [{"buildinfo": 1.0, "$db": "admin"}]
+127.0.0.1 60720 10.50.121.30 27018 sql [{"getLog": "startupWarnings", "$db": "admin"}]
+127.0.0.1 60720 10.50.121.30 27018 sql [{"isMaster": 1.0, "forShell": 1.0, "$db": "test"}]
+127.0.0.1 60720 10.50.121.30 27018 sql [{"buildInfo": 1.0, "$db": "test"}]
+127.0.0.1 60720 10.50.121.30 27018 sql [{"isMaster": 1.0, "forShell": 1.0, "$db": "test"}]
+127.0.0.1 60720 10.50.121.30 27018 sql [{"replSetGetStatus": 1.0, "forShell": 1.0, "$db": "admin"}]
+127.0.0.1 60720 10.50.121.30 27018 sql [{"listDatabases": 1.0, "$db": "admin"}]
+127.0.0.1 60720 10.50.121.30 27018 sql [{"isMaster": 1.0, "forShell": 1.0, "$db": "test"}]
+127.0.0.1 60720 10.50.121.30 27018 sql [{"isMaster": 1.0, "forShell": 1.0, "$db": "test"}]
+127.0.0.1 60720 10.50.121.30 27018 sql [{"isMaster": 1.0, "forShell": 1.0, "$db": "test"}]
+127.0.0.1 62550 10.50.121.30 27018 sql [{"isMaster": 1, "client": {"application": {"name": "MongoDB Shell"}, "driver": {"name": "MongoDB Internal Client", "version": "3.6.4"}, "os": {"type": "Darwin", "name": "Mac OS X", "architecture": "x86_64", "version": "21.4.0"}}}]
+127.0.0.1 62550 10.50.121.30 27018 sql [{"whatsmyuri": 1, "$db": "admin"}]
+127.0.0.1 62550 10.50.121.30 27018 sql [{"buildinfo": 1.0, "$db": "admin"}]
+127.0.0.1 62550 10.50.121.30 27018 sql [{"getLog": "startupWarnings", "$db": "admin"}]
+127.0.0.1 62550 10.50.121.30 27018 sql [{"isMaster": 1.0, "forShell": 1.0, "$db": "test"}]
+127.0.0.1 62550 10.50.121.30 27018 sql [{"buildInfo": 1.0, "$db": "test"}]
+127.0.0.1 62550 10.50.121.30 27018 sql [{"isMaster": 1.0, "forShell": 1.0, "$db": "test"}]
+127.0.0.1 62550 10.50.121.30 27018 sql [{"replSetGetStatus": 1.0, "forShell": 1.0, "$db": "admin"}]
+127.0.0.1 62550 10.50.121.30 27018 sql [{"isMaster": 1.0, "forShell": 1.0, "$db": "test"}]
+127.0.0.1 62550 10.50.121.30 27018 sql [{"isMaster": 1.0, "forShell": 1.0, "$db": "test"}]
+127.0.0.1 62550 10.50.121.30 27018 sql [{"isMaster": 1.0, "forShell": 1.0, "$db": "test"}]
+127.0.0.1 49430 10.50.121.30 27018 sql [{"isMaster": 1, "client": {"application": {"name": "MongoDB Shell"}, "driver": {"name": "MongoDB Internal Client", "version": "3.6.4"}, "os": {"type": "Darwin", "name": "Mac OS X", "architecture": "x86_64", "version": "21.4.0"}}}]
+127.0.0.1 49430 10.50.121.30 27018 sql {"whatsmyuri": 1, "$db": "admin"}
+127.0.0.1 49430 10.50.121.30 27018 sql {"buildinfo": 1.0, "$db": "admin"}
+127.0.0.1 49430 10.50.121.30 27018 sql {"getLog": "startupWarnings", "$db": "admin"}
+127.0.0.1 49430 10.50.121.30 27018 sql {"isMaster": 1.0, "forShell": 1.0, "$db": "test"}
+127.0.0.1 49430 10.50.121.30 27018 sql {"buildInfo": 1.0, "$db": "test"}
+127.0.0.1 49430 10.50.121.30 27018 sql {"isMaster": 1.0, "forShell": 1.0, "$db": "test"}
+127.0.0.1 49430 10.50.121.30 27018 sql {"replSetGetStatus": 1.0, "forShell": 1.0, "$db": "admin"}
+127.0.0.1 49430 10.50.121.30 27018 sql {"isMaster": 1.0, "forShell": 1.0, "$db": "test"}
+127.0.0.1 49822 10.50.121.30 27018 sql [{"isMaster": 1, "client": {"application": {"name": "MongoDB Shell"}, "driver": {"name": "MongoDB Internal Client", "version": "3.6.4"}, "os": {"type": "Darwin", "name": "Mac OS X", "architecture": "x86_64", "version": "21.4.0"}}}]
+127.0.0.1 49822 10.50.121.30 27018 sql {"whatsmyuri": 1, "$db": "admin"}
+127.0.0.1 49822 10.50.121.30 27018 sql {"buildinfo": 1.0, "$db": "admin"}
+127.0.0.1 49822 10.50.121.30 27018 sql {"getLog": "startupWarnings", "$db": "admin"}
+127.0.0.1 49822 10.50.121.30 27018 sql {"isMaster": 1.0, "forShell": 1.0, "$db": "test"}
+127.0.0.1 49822 10.50.121.30 27018 sql {"buildInfo": 1.0, "$db": "test"}
+127.0.0.1 49822 10.50.121.30 27018 sql {"isMaster": 1.0, "forShell": 1.0, "$db": "test"}
+127.0.0.1 49822 10.50.121.30 27018 sql {"replSetGetStatus": 1.0, "forShell": 1.0, "$db": "admin"}
+127.0.0.1 49822 10.50.121.30 27018 sql {"isMaster": 1.0, "forShell": 1.0, "$db": "test"}
+127.0.0.1 51806 10.50.121.30 27018 sql [{"isMaster": 1, "client": {"application": {"name": "MongoDB Shell"}, "driver": {"name": "MongoDB Internal Client", "version": "3.6.4"}, "os": {"type": "Darwin", "name": "Mac OS X", "architecture": "x86_64", "version": "21.4.0"}}}]
+127.0.0.1 51806 10.50.121.30 27018 sql [{"whatsmyuri": 1, "$db": "admin"}]
+127.0.0.1 51806 10.50.121.30 27018 sql [{"buildinfo": 1.0, "$db": "admin"}]
+127.0.0.1 51806 10.50.121.30 27018 sql [{"getLog": "startupWarnings", "$db": "admin"}]
+127.0.0.1 51806 10.50.121.30 27018 sql [{"isMaster": 1.0, "forShell": 1.0, "$db": "test"}]
+127.0.0.1 51806 10.50.121.30 27018 sql [{"buildInfo": 1.0, "$db": "test"}]
+127.0.0.1 51806 10.50.121.30 27018 sql [{"isMaster": 1.0, "forShell": 1.0, "$db": "test"}]
+127.0.0.1 51806 10.50.121.30 27018 sql [{"replSetGetStatus": 1.0, "forShell": 1.0, "$db": "admin"}]
+127.0.0.1 51806 10.50.121.30 27018 sql [{"isMaster": 1.0, "forShell": 1.0, "$db": "test"}]
+127.0.0.1 52860 10.50.121.30 27018 sql [{"isMaster": 1, "client": {"application": {"name": "MongoDB Shell"}, "driver": {"name": "MongoDB Internal Client", "version": "3.6.4"}, "os": {"type": "Darwin", "name": "Mac OS X", "architecture": "x86_64", "version": "21.4.0"}}}]
+127.0.0.1 52860 10.50.121.30 27018 sql [{"whatsmyuri": 1, "$db": "admin"}]
+127.0.0.1 52860 10.50.121.30 27018 sql [{"buildinfo": 1.0, "$db": "admin"}]
+127.0.0.1 52860 10.50.121.30 27018 sql [{"getLog": "startupWarnings", "$db": "admin"}]
+127.0.0.1 52860 10.50.121.30 27018 sql [{"isMaster": 1.0, "forShell": 1.0, "$db": "test"}]
+127.0.0.1 52860 10.50.121.30 27018 sql [{"buildInfo": 1.0, "$db": "test"}]
+127.0.0.1 52860 10.50.121.30 27018 sql [{"isMaster": 1.0, "forShell": 1.0, "$db": "test"}]
+127.0.0.1 52860 10.50.121.30 27018 sql [{"replSetGetStatus": 1.0, "forShell": 1.0, "$db": "admin"}]
+127.0.0.1 52860 10.50.121.30 27018 sql [{"isMaster": 1.0, "forShell": 1.0, "$db": "test"}]
+127.0.0.1 63775 192.168.232.3 27018 sql [{"isMaster": 1, "client": {"application": {"name": "MongoDB Shell"}, "driver": {"name": "MongoDB Internal Client", "version": "3.6.4"}, "os": {"type": "Darwin", "name": "Mac OS X", "architecture": "x86_64", "version": "21.4.0"}}}]
+127.0.0.1 63775 192.168.232.3 27018 sql [{"whatsmyuri": 1, "$db": "admin"}]
+127.0.0.1 63775 192.168.232.3 27018 sql [{"buildinfo": 1.0, "$db": "admin"}]
+127.0.0.1 63775 192.168.232.3 27018 sql [{"getLog": "startupWarnings", "$db": "admin"}]
+127.0.0.1 63775 192.168.232.3 27018 sql [{"isMaster": 1.0, "forShell": 1.0, "$db": "test"}]
+127.0.0.1 63775 192.168.232.3 27018 sql [{"buildInfo": 1.0, "$db": "test"}]
+127.0.0.1 63775 192.168.232.3 27018 sql [{"isMaster": 1.0, "forShell": 1.0, "$db": "test"}]
+127.0.0.1 63775 192.168.232.3 27018 sql [{"replSetGetStatus": 1.0, "forShell": 1.0, "$db": "admin"}]
+127.0.0.1 63863 192.168.232.3 27018 sql [{"isMaster": 1, "client": {"application": {"name": "MongoDB Shell"}, "driver": {"name": "MongoDB Internal Client", "version": "3.6.4"}, "os": {"type": "Darwin", "name": "Mac OS X", "architecture": "x86_64", "version": "21.4.0"}}}]
+127.0.0.1 63863 192.168.232.3 27018 sql [{"whatsmyuri": 1, "$db": "admin"}]
+127.0.0.1 63863 192.168.232.3 27018 sql [{"buildinfo": 1.0, "$db": "admin"}]
+127.0.0.1 63863 192.168.232.3 27018 sql [{"getLog": "startupWarnings", "$db": "admin"}]
+127.0.0.1 63863 192.168.232.3 27018 sql [{"isMaster": 1.0, "forShell": 1.0, "$db": "test"}]
+127.0.0.1 63863 192.168.232.3 27018 sql [{"buildInfo": 1.0, "$db": "test"}]
+127.0.0.1 63863 192.168.232.3 27018 sql [{"isMaster": 1.0, "forShell": 1.0, "$db": "test"}]
+127.0.0.1 63863 192.168.232.3 27018 sql [{"replSetGetStatus": 1.0, "forShell": 1.0, "$db": "admin"}]
+127.0.0.1 63863 192.168.232.3 27018 sql [{"isMaster": 1.0, "forShell": 1.0, "$db": "test"}]
+127.0.0.1 58301 192.168.232.3 27018 sql [{"isMaster": 1, "client": {"application": {"name": "MongoDB Shell"}, "driver": {"name": "MongoDB Internal Client", "version": "3.6.4"}, "os": {"type": "Darwin", "name": "Mac OS X", "architecture": "x86_64", "version": "21.4.0"}}}]
+127.0.0.1 58301 192.168.232.3 27018 sql [{"whatsmyuri": 1, "$db": "admin"}]
+127.0.0.1 58301 192.168.232.3 27018 sql [{"buildinfo": 1.0, "$db": "admin"}]
+127.0.0.1 58301 192.168.232.3 27018 sql [{"getLog": "startupWarnings", "$db": "admin"}]
+127.0.0.1 58301 192.168.232.3 27018 sql [{"isMaster": 1.0, "forShell": 1.0, "$db": "test"}]
+127.0.0.1 58301 192.168.232.3 27018 sql [{"buildInfo": 1.0, "$db": "test"}]
+127.0.0.1 58301 192.168.232.3 27018 sql [{"isMaster": 1.0, "forShell": 1.0, "$db": "test"}]
+127.0.0.1 58301 192.168.232.3 27018 sql [{"replSetGetStatus": 1.0, "forShell": 1.0, "$db": "admin"}]
+127.0.0.1 58301 192.168.232.3 27018 sql [{"isMaster": 1.0, "forShell": 1.0, "$db": "test"}]
+127.0.0.1 59618 192.168.232.3 27018 sql [{"isMaster": 1, "client": {"application": {"name": "MongoDB Shell"}, "driver": {"name": "MongoDB Internal Client", "version": "3.6.4"}, "os": {"type": "Darwin", "name": "Mac OS X", "architecture": "x86_64", "version": "21.4.0"}}}]
+127.0.0.1 60111 192.168.232.3 27018 sql [{"isMaster": 1, "client": {"application": {"name": "MongoDB Shell"}, "driver": {"name": "MongoDB Internal Client", "version": "3.6.4"}, "os": {"type": "Darwin", "name": "Mac OS X", "architecture": "x86_64", "version": "21.4.0"}}}]
+127.0.0.1 60111 192.168.232.3 27018 sql [{"whatsmyuri": 1, "$db": "admin"}]
+127.0.0.1 60111 192.168.232.3 27018 sql [{"buildinfo": 1.0, "$db": "admin"}]
+127.0.0.1 60111 192.168.232.3 27018 sql [{"getLog": "startupWarnings", "$db": "admin"}]
+127.0.0.1 60111 192.168.232.3 27018 sql [{"isMaster": 1.0, "forShell": 1.0, "$db": "test"}]
+127.0.0.1 60111 192.168.232.3 27018 sql [{"buildInfo": 1.0, "$db": "test"}]
+127.0.0.1 60111 192.168.232.3 27018 sql [{"isMaster": 1.0, "forShell": 1.0, "$db": "test"}]
+127.0.0.1 60111 192.168.232.3 27018 sql [{"replSetGetStatus": 1.0, "forShell": 1.0, "$db": "admin"}]
+127.0.0.1 60111 192.168.232.3 27018 sql [{"listDatabases": 1.0, "$db": "admin"}]
+127.0.0.1 60111 192.168.232.3 27018 sql [{"isMaster": 1.0, "forShell": 1.0, "$db": "test"}]
+127.0.0.1 60111 192.168.232.3 27018 sql [{"isMaster": 1.0, "forShell": 1.0, "$db": "test"}]
+127.0.0.1 60111 192.168.232.3 27018 sql [{"isMaster": 1.0, "forShell": 1.0, "$db": "test"}]
+127.0.0.1 60111 192.168.232.3 27018 sql [{"isMaster": 1.0, "forShell": 1.0, "$db": "test"}]
+127.0.0.1 60111 192.168.232.3 27018 sql [{"isMaster": 1.0, "forShell": 1.0, "$db": "test"}]
+127.0.0.1 65352 192.168.232.3 27018 sql [{"isMaster": 1, "client": {"application": {"name": "MongoDB Shell"}, "driver": {"name": "MongoDB Internal Client", "version": "3.6.4"}, "os": {"type": "Darwin", "name": "Mac OS X", "architecture": "x86_64", "version": "21.4.0"}}}]
+127.0.0.1 65352 192.168.232.3 27018 sql [{"whatsmyuri": 1, "$db": "admin"}]
+127.0.0.1 65352 192.168.232.3 27018 sql [{"buildinfo": 1.0, "$db": "admin"}]
+127.0.0.1 65352 192.168.232.3 27018 sql [{"getLog": "startupWarnings", "$db": "admin"}]
+127.0.0.1 65352 192.168.232.3 27018 sql [{"isMaster": 1.0, "forShell": 1.0, "$db": "test"}]
+127.0.0.1 65352 192.168.232.3 27018 sql [{"buildInfo": 1.0, "$db": "test"}]
+127.0.0.1 65352 192.168.232.3 27018 sql [{"isMaster": 1.0, "forShell": 1.0, "$db": "test"}]
+127.0.0.1 65352 192.168.232.3 27018 sql [{"replSetGetStatus": 1.0, "forShell": 1.0, "$db": "admin"}]
+127.0.0.1 65352 192.168.232.3 27018 sql [{"listDatabases": 1.0, "$db": "admin"}]
+127.0.0.1 65352 192.168.232.3 27018 sql [{"isMaster": 1.0, "forShell": 1.0, "$db": "test"}]
+127.0.0.1 65352 192.168.232.3 27018 sql [{"isMaster": 1.0, "forShell": 1.0, "$db": "test"}]
+127.0.0.1 65352 192.168.232.3 27018 sql [{"isMaster": 1.0, "forShell": 1.0, "$db": "test"}]
+127.0.0.1 65352 192.168.232.3 27018 sql [{"isMaster": 1.0, "forShell": 1.0, "$db": "test"}]
+127.0.0.1 65352 192.168.232.3 27018 sql [{"isMaster": 1.0, "forShell": 1.0, "$db": "test"}]
+127.0.0.1 49324 192.168.232.3 27018 sql [{"isMaster": 1, "client": {"application": {"name": "MongoDB Shell"}, "driver": {"name": "MongoDB Internal Client", "version": "3.6.4"}, "os": {"type": "Darwin", "name": "Mac OS X", "architecture": "x86_64", "version": "21.4.0"}}}]
+127.0.0.1 49324 192.168.232.3 27018 sql [{"whatsmyuri": 1, "$db": "admin"}]
+127.0.0.1 49324 192.168.232.3 27018 sql [{"buildinfo": 1.0, "$db": "admin"}]
+127.0.0.1 49324 192.168.232.3 27018 sql [{"getLog": "startupWarnings", "$db": "admin"}]
+127.0.0.1 49324 192.168.232.3 27018 sql [{"isMaster": 1.0, "forShell": 1.0, "$db": "test"}]
+127.0.0.1 49324 192.168.232.3 27018 sql [{"buildInfo": 1.0, "$db": "test"}]
+127.0.0.1 49324 192.168.232.3 27018 sql [{"isMaster": 1.0, "forShell": 1.0, "$db": "test"}]
+127.0.0.1 49324 192.168.232.3 27018 sql [{"replSetGetStatus": 1.0, "forShell": 1.0, "$db": "admin"}]
+127.0.0.1 49324 192.168.232.3 27018 sql [{"isMaster": 1.0, "forShell": 1.0, "$db": "test"}]
+127.0.0.1 54372 192.168.232.3 27018 sql [{"isMaster": 1, "client": {"application": {"name": "MongoDB Shell"}, "driver": {"name": "MongoDB Internal Client", "version": "3.6.4"}, "os": {"type": "Darwin", "name": "Mac OS X", "architecture": "x86_64", "version": "21.4.0"}}}]
+127.0.0.1 54372 192.168.232.3 27018 sql [{"whatsmyuri": 1, "$db": "admin"}]
+127.0.0.1 54372 192.168.232.3 27018 sql [{"buildinfo": 1.0, "$db": "admin"}]
+127.0.0.1 54372 192.168.232.3 27018 sql [{"getLog": "startupWarnings", "$db": "admin"}]
+127.0.0.1 54372 192.168.232.3 27018 sql [{"isMaster": 1.0, "forShell": 1.0, "$db": "test"}]
+127.0.0.1 54372 192.168.232.3 27018 sql [{"buildInfo": 1.0, "$db": "test"}]
+127.0.0.1 54372 192.168.232.3 27018 sql [{"isMaster": 1.0, "forShell": 1.0, "$db": "test"}]
+127.0.0.1 54372 192.168.232.3 27018 sql [{"replSetGetStatus": 1.0, "forShell": 1.0, "$db": "admin"}]
+127.0.0.1 54372 192.168.232.3 27018 sql [{"isMaster": 1.0, "forShell": 1.0, "$db": "test"}]
+127.0.0.1 54372 192.168.232.3 27018 sql [{"isMaster": 1.0, "forShell": 1.0, "$db": "test"}]
+127.0.0.1 54372 192.168.232.3 27018 sql [{"isMaster": 1.0, "forShell": 1.0, "$db": "test"}]
+127.0.0.1 54372 192.168.232.3 27018 sql [{"isMaster": 1.0, "forShell": 1.0, "$db": "test"}]
+127.0.0.1 54372 192.168.232.3 27018 sql [{"isMaster": 1.0, "forShell": 1.0, "$db": "test"}]
+127.0.0.1 62478 192.168.232.3 27018 sql [{"isMaster": 1, "client": {"application": {"name": "MongoDB Shell"}, "driver": {"name": "MongoDB Internal Client", "version": "3.6.4"}, "os": {"type": "Darwin", "name": "Mac OS X", "architecture": "x86_64", "version": "21.4.0"}}}]
+127.0.0.1 63617 192.168.232.3 27018 sql [{"isMaster": 1, "client": {"application": {"name": "MongoDB Shell"}, "driver": {"name": "MongoDB Internal Client", "version": "3.6.4"}, "os": {"type": "Darwin", "name": "Mac OS X", "architecture": "x86_64", "version": "21.4.0"}}}]
+127.0.0.1 63821 192.168.232.3 27018 sql [{"isMaster": 1, "client": {"application": {"name": "MongoDB Shell"}, "driver": {"name": "MongoDB Internal Client", "version": "3.6.4"}, "os": {"type": "Darwin", "name": "Mac OS X", "architecture": "x86_64", "version": "21.4.0"}}}]
+127.0.0.1 52012 192.168.232.3 27018 sql [{"isMaster": 1, "client": {"application": {"name": "MongoDB Shell"}, "driver": {"name": "MongoDB Internal Client", "version": "3.6.4"}, "os": {"type": "Darwin", "name": "Mac OS X", "architecture": "x86_64", "version": "21.4.0"}}}]
+127.0.0.1 52563 192.168.232.3 27018 sql [{"isMaster": 1, "client": {"application": {"name": "MongoDB Shell"}, "driver": {"name": "MongoDB Internal Client", "version": "3.6.4"}, "os": {"type": "Darwin", "name": "Mac OS X", "architecture": "x86_64", "version": "21.4.0"}}}]
+127.0.0.1 53009 192.168.232.3 27018 sql [{"isMaster": 1, "client": {"application": {"name": "MongoDB Shell"}, "driver": {"name": "MongoDB Internal Client", "version": "3.6.4"}, "os": {"type": "Darwin", "name": "Mac OS X", "architecture": "x86_64", "version": "21.4.0"}}}]
+127.0.0.1 53797 192.168.232.3 27018 sql [{"isMaster": 1, "client": {"application": {"name": "MongoDB Shell"}, "driver": {"name": "MongoDB Internal Client", "version": "3.6.4"}, "os": {"type": "Darwin", "name": "Mac OS X", "architecture": "x86_64", "version": "21.4.0"}}}]
+127.0.0.1 53984 192.168.232.3 27018 sql [{"isMaster": 1, "client": {"application": {"name": "MongoDB Shell"}, "driver": {"name": "MongoDB Internal Client", "version": "3.6.4"}, "os": {"type": "Darwin", "name": "Mac OS X", "architecture": "x86_64", "version": "21.4.0"}}}]
+127.0.0.1 57783 192.168.232.3 27018 sql [{"isMaster": 1, "client": {"application": {"name": "MongoDB Shell"}, "driver": {"name": "MongoDB Internal Client", "version": "3.6.4"}, "os": {"type": "Darwin", "name": "Mac OS X", "architecture": "x86_64", "version": "21.4.0"}}}]
+127.0.0.1 65511 192.168.232.3 27018 sql [{"isMaster": 1, "client": {"application": {"name": "MongoDB Shell"}, "driver": {"name": "MongoDB Internal Client", "version": "3.6.4"}, "os": {"type": "Darwin", "name": "Mac OS X", "architecture": "x86_64", "version": "21.4.0"}}}]
+127.0.0.1 57325 192.168.232.3 27018 sql [{"isMaster": 1, "client": {"application": {"name": "MongoDB Shell"}, "driver": {"name": "MongoDB Internal Client", "version": "3.6.4"}, "os": {"type": "Darwin", "name": "Mac OS X", "architecture": "x86_64", "version": "21.4.0"}}}]
+127.0.0.1 50825 192.168.232.3 27018 sql [{"isMaster": 1, "client": {"application": {"name": "MongoDB Shell"}, "driver": {"name": "MongoDB Internal Client", "version": "3.6.4"}, "os": {"type": "Darwin", "name": "Mac OS X", "architecture": "x86_64", "version": "21.4.0"}}}]
+127.0.0.1 52194 192.168.232.3 27018 sql [{"isMaster": 1, "client": {"application": {"name": "MongoDB Shell"}, "driver": {"name": "MongoDB Internal Client", "version": "3.6.4"}, "os": {"type": "Darwin", "name": "Mac OS X", "architecture": "x86_64", "version": "21.4.0"}}}]
+127.0.0.1 64757 192.168.232.3 27018 sql [{"isMaster": 1, "client": {"application": {"name": "MongoDB Shell"}, "driver": {"name": "MongoDB Internal Client", "version": "3.6.4"}, "os": {"type": "Darwin", "name": "Mac OS X", "architecture": "x86_64", "version": "21.4.0"}}}]
+127.0.0.1 64918 192.168.232.3 27018 sql [{"isMaster": 1, "client": {"application": {"name": "MongoDB Shell"}, "driver": {"name": "MongoDB Internal Client", "version": "3.6.4"}, "os": {"type": "Darwin", "name": "Mac OS X", "architecture": "x86_64", "version": "21.4.0"}}}]
+127.0.0.1 49632 192.168.232.3 27018 sql [{"isMaster": 1, "client": {"application": {"name": "MongoDB Shell"}, "driver": {"name": "MongoDB Internal Client", "version": "3.6.4"}, "os": {"type": "Darwin", "name": "Mac OS X", "architecture": "x86_64", "version": "21.4.0"}}}]
+127.0.0.1 50095 192.168.232.3 27018 sql [{"isMaster": 1, "client": {"application": {"name": "MongoDB Shell"}, "driver": {"name": "MongoDB Internal Client", "version": "3.6.4"}, "os": {"type": "Darwin", "name": "Mac OS X", "architecture": "x86_64", "version": "21.4.0"}}}]
+127.0.0.1 50610 192.168.232.3 27018 sql [{"isMaster": 1, "client": {"application": {"name": "MongoDB Shell"}, "driver": {"name": "MongoDB Internal Client", "version": "3.6.4"}, "os": {"type": "Darwin", "name": "Mac OS X", "architecture": "x86_64", "version": "21.4.0"}}}]
+127.0.0.1 53462 192.168.232.3 27018 sql [{"isMaster": 1, "client": {"application": {"name": "MongoDB Shell"}, "driver": {"name": "MongoDB Internal Client", "version": "3.6.4"}, "os": {"type": "Darwin", "name": "Mac OS X", "architecture": "x86_64", "version": "21.4.0"}}}]
+127.0.0.1 55999 192.168.232.3 27018 sql [{"isMaster": 1, "client": {"application": {"name": "MongoDB Shell"}, "driver": {"name": "MongoDB Internal Client", "version": "3.6.4"}, "os": {"type": "Darwin", "name": "Mac OS X", "architecture": "x86_64", "version": "21.4.0"}}}]
+127.0.0.1 61984 192.168.232.3 27018 sql ['[{"getLog": "startupWarnings", "$db": "admin"}]']
+127.0.0.1 61984 192.168.232.3 27018 sql ['[{"listDatabases": 1.0, "$db": "admin"}]']
+127.0.0.1 61984 192.168.232.3 27018 sql ['[{"update": "honey", "ordered": true, "$db": "test"}]', '[{"q": {"name": "tom9"}, "u": {"$set": {"name": "tom99"}}, "multi": false, "upsert": false}]', 'action type: updates']
+127.0.0.1 63935 192.168.232.3 27018 sql ['[{"getLog": "startupWarnings", "$db": "admin"}]']
+127.0.0.1 65329 192.168.232.3 27018 sql ['[{"getLog": "startupWarnings", "$db": "admin"}]']
+127.0.0.1 65329 192.168.232.3 27018 sql ['[{"insert": "honey", "ordered": true, "$db": "test"}]', '[{"name": "tom17", "_id": "1111"}]', 'action type: documents']
+127.0.0.1 51321 192.168.232.3 27018 sql ['[{"getLog": "startupWarnings", "$db": "admin"}]']
+127.0.0.1 53135 192.168.232.3 27018 sql ['[{"getLog": "startupWarnings", "$db": "admin"}]']
+127.0.0.1 53135 192.168.232.3 27018 sql ['[{"listDatabases": 1.0, "$db": "admin"}]']
+127.0.0.1 53577 192.168.232.3 27018 sql ['[{"whatsmyuri": 1, "$db": "admin"}]']
+127.0.0.1 53577 192.168.232.3 27018 sql ['[{"getLog": "startupWarnings", "$db": "admin"}]']
+127.0.0.1 53747 192.168.232.3 27018 sql ['[{"whatsmyuri": 1, "$db": "admin"}]']
+127.0.0.1 53747 192.168.232.3 27018 sql ['[{"getLog": "startupWarnings", "$db": "admin"}]']
+127.0.0.1 53747 192.168.232.3 27018 sql ['[{"listDatabases": 1.0, "$db": "admin"}]']
+127.0.0.1 53934 192.168.232.3 27018 sql ['[{"buildinfo": 1.0, "$db": "admin"}]']
+127.0.0.1 53934 192.168.232.3 27018 sql ['[{"getLog": "startupWarnings", "$db": "admin"}]']
+127.0.0.1 54120 192.168.232.3 27018 sql [{'isMaster': 1, 'client': {'application': {'name': 'MongoDB Shell'}, 'driver': {'name': 'MongoDB Internal Client', 'version': '3.6.4'}, 'os': {'type': 'Darwin', 'name': 'Mac OS X', 'architecture': 'x86_64', 'version': '21.4.0'}}}]
+127.0.0.1 54120 192.168.232.3 27018 sql ['[{"getLog": "startupWarnings", "$db": "admin"}]']
+127.0.0.1 54120 192.168.232.3 27018 sql ['[{"isMaster": 1.0, "forShell": 1.0, "$db": "test"}]']
+127.0.0.1 54120 192.168.232.3 27018 sql ['[{"isMaster": 1.0, "forShell": 1.0, "$db": "test"}]']
+127.0.0.1 54120 192.168.232.3 27018 sql ['[{"isMaster": 1.0, "forShell": 1.0, "$db": "test"}]']
+127.0.0.1 54120 192.168.232.3 27018 sql ['[{"listDatabases": 1.0, "$db": "admin"}]']
+127.0.0.1 54120 192.168.232.3 27018 sql ['[{"isMaster": 1.0, "forShell": 1.0, "$db": "test"}]']
+127.0.0.1 54120 192.168.232.3 27018 sql ['[{"isMaster": 1.0, "forShell": 1.0, "$db": "local"}]']
+127.0.0.1 54120 192.168.232.3 27018 sql ['[{"isMaster": 1.0, "forShell": 1.0, "$db": "local"}]']
+127.0.0.1 54120 192.168.232.3 27018 sql ['[{"update": "honey", "ordered": true, "$db": "local"}]', '[{"q": {"name": "tom9"}, "u": {"$set": {"name": "tom99"}}, "multi": false, "upsert": false}]', 'action type: updates']
+127.0.0.1 54120 192.168.232.3 27018 sql ['[{"isMaster": 1.0, "forShell": 1.0, "$db": "local"}]']
+127.0.0.1 54120 192.168.232.3 27018 sql ['[{"isMaster": 1.0, "forShell": 1.0, "$db": "local"}]']
+127.0.0.1 54120 192.168.232.3 27018 sql ['[{"isMaster": 1.0, "forShell": 1.0, "$db": "local"}]']
+127.0.0.1 54120 192.168.232.3 27018 sql ['[{"isMaster": 1.0, "forShell": 1.0, "$db": "local"}]']
+127.0.0.1 54120 192.168.232.3 27018 sql ['[{"isMaster": 1.0, "forShell": 1.0, "$db": "local"}]']
+127.0.0.1 54120 192.168.232.3 27018 sql ['[{"isMaster": 1.0, "forShell": 1.0, "$db": "local"}]']
+127.0.0.1 54120 192.168.232.3 27018 sql ['[{"isMaster": 1.0, "forShell": 1.0, "$db": "local"}]']
+127.0.0.1 56354 192.168.232.3 27018 sql [{'isMaster': 1, 'client': {'application': {'name': 'MongoDB Shell'}, 'driver': {'name': 'MongoDB Internal Client', 'version': '3.6.4'}, 'os': {'type': 'Darwin', 'name': 'Mac OS X', 'architecture': 'x86_64', 'version': '21.4.0'}}}]
+127.0.0.1 56354 192.168.232.3 27018 sql ['[{"getLog": "startupWarnings", "$db": "admin"}]']
+127.0.0.1 56354 192.168.232.3 27018 sql ['[{"isMaster": 1.0, "forShell": 1.0, "$db": "test"}]']
+127.0.0.1 56354 192.168.232.3 27018 sql ['[{"isMaster": 1.0, "forShell": 1.0, "$db": "test"}]']
+127.0.0.1 56354 192.168.232.3 27018 sql ['[{"isMaster": 1.0, "forShell": 1.0, "$db": "test"}]']
+127.0.0.1 57077 192.168.232.3 27018 sql [{'isMaster': 1, 'client': {'application': {'name': 'MongoDB Shell'}, 'driver': {'name': 'MongoDB Internal Client', 'version': '3.6.4'}, 'os': {'type': 'Darwin', 'name': 'Mac OS X', 'architecture': 'x86_64', 'version': '21.4.0'}}}]
+127.0.0.1 57077 192.168.232.3 27018 sql ['[{"getLog": "startupWarnings", "$db": "admin"}]']
+127.0.0.1 57077 192.168.232.3 27018 sql ['[{"isMaster": 1.0, "forShell": 1.0, "$db": "test"}]']
+127.0.0.1 57077 192.168.232.3 27018 sql ['[{"isMaster": 1.0, "forShell": 1.0, "$db": "test"}]']
+127.0.0.1 57077 192.168.232.3 27018 sql ['[{"isMaster": 1.0, "forShell": 1.0, "$db": "test"}]']
+127.0.0.1 57077 192.168.232.3 27018 sql ['[{"isMaster": 1.0, "forShell": 1.0, "$db": "test"}]']
+127.0.0.1 57077 192.168.232.3 27018 sql ['[{"isMaster": 1.0, "forShell": 1.0, "$db": "test"}]']
+127.0.0.1 57077 192.168.232.3 27018 sql ['[{"isMaster": 1.0, "forShell": 1.0, "$db": "test"}]']
+127.0.0.1 57077 192.168.232.3 27018 sql ['[{"isMaster": 1.0, "forShell": 1.0, "$db": "test"}]']
+127.0.0.1 58822 192.168.232.3 27018 sql [{'isMaster': 1, 'client': {'application': {'name': 'MongoDB Shell'}, 'driver': {'name': 'MongoDB Internal Client', 'version': '3.6.4'}, 'os': {'type': 'Darwin', 'name': 'Mac OS X', 'architecture': 'x86_64', 'version': '21.4.0'}}}]
+127.0.0.1 58822 192.168.232.3 27018 sql [[{'getLog': 'startupWarnings', '$db': 'admin'}]]
+127.0.0.1 58822 192.168.232.3 27018 sql [[{'isMaster': 1.0, 'forShell': 1.0, '$db': 'test'}]]
+127.0.0.1 58822 192.168.232.3 27018 sql [[{'isMaster': 1.0, 'forShell': 1.0, '$db': 'test'}]]
+127.0.0.1 58822 192.168.232.3 27018 sql [[{'isMaster': 1.0, 'forShell': 1.0, '$db': 'test'}]]
+127.0.0.1 58822 192.168.232.3 27018 sql [[{'isMaster': 1.0, 'forShell': 1.0, '$db': 'test'}]]
+127.0.0.1 58822 192.168.232.3 27018 sql [[{'isMaster': 1.0, 'forShell': 1.0, '$db': 'test'}]]
+127.0.0.1 58822 192.168.232.3 27018 sql [[{'isMaster': 1.0, 'forShell': 1.0, '$db': 'test'}]]
+127.0.0.1 58822 192.168.232.3 27018 sql [[{'insert': 'honey', 'ordered': True, '$db': 'test'}], [{'_id': ObjectId('6469e92499b3eeec79ba4b91'), 'name': 'tom17'}], 'action type: documents']
+127.0.0.1 58822 192.168.232.3 27018 sql [[{'isMaster': 1.0, 'forShell': 1.0, '$db': 'test'}]]
+127.0.0.1 59570 192.168.232.3 27018 sql [{'isMaster': 1, 'client': {'application': {'name': 'MongoDB Shell'}, 'driver': {'name': 'MongoDB Internal Client', 'version': '3.6.4'}, 'os': {'type': 'Darwin', 'name': 'Mac OS X', 'architecture': 'x86_64', 'version': '21.4.0'}}}]
+127.0.0.1 59570 192.168.232.3 27018 sql [[{'getLog': 'startupWarnings', '$db': 'admin'}]]
+127.0.0.1 59570 192.168.232.3 27018 sql [[{'isMaster': 1.0, 'forShell': 1.0, '$db': 'test'}]]
+127.0.0.1 59570 192.168.232.3 27018 sql [[{'isMaster': 1.0, 'forShell': 1.0, '$db': 'test'}]]
+127.0.0.1 60242 192.168.232.3 27018 sql [{'isMaster': 1, 'client': {'application': {'name': 'MongoDB Shell'}, 'driver': {'name': 'MongoDB Internal Client', 'version': '3.6.4'}, 'os': {'type': 'Darwin', 'name': 'Mac OS X', 'architecture': 'x86_64', 'version': '21.4.0'}}}]
+127.0.0.1 60242 192.168.232.3 27018 sql [[{'getLog': 'startupWarnings', '$db': 'admin'}]]
+127.0.0.1 60242 192.168.232.3 27018 sql [[{'isMaster': 1.0, 'forShell': 1.0, '$db': 'test'}]]
+127.0.0.1 60242 192.168.232.3 27018 sql [[{'isMaster': 1.0, 'forShell': 1.0, '$db': 'test'}]]
+127.0.0.1 60242 192.168.232.3 27018 sql [[{'insert': 'honey', 'ordered': True, '$db': 'test'}], [{'_id': ObjectId('6469ea00c1f33bc94a8e45da'), 'name': 'tom17'}], 'action type: documents']
+127.0.0.1 60242 192.168.232.3 27018 sql [[{'isMaster': 1.0, 'forShell': 1.0, '$db': 'test'}]]
+127.0.0.1 60242 192.168.232.3 27018 sql [[{'listDatabases': 1.0, '$db': 'admin'}]]
+127.0.0.1 60242 192.168.232.3 27018 sql [[{'isMaster': 1.0, 'forShell': 1.0, '$db': 'test'}]]
+127.0.0.1 60242 192.168.232.3 27018 sql [[{'isMaster': 1.0, 'forShell': 1.0, '$db': 'admin'}]]
+127.0.0.1 60242 192.168.232.3 27018 sql [[{'insert': 'honey', 'ordered': True, '$db': 'admin'}], [{'_id': ObjectId('6469eabcc1f33bc94a8e45db'), 'name': 'tom17'}], 'action type: documents']
+127.0.0.1 60242 192.168.232.3 27018 sql [[{'isMaster': 1.0, 'forShell': 1.0, '$db': 'admin'}]]
+127.0.0.1 60242 192.168.232.3 27018 sql [[{'update': 'honey', 'ordered': True, '$db': 'admin'}], [{'q': {'name': 'tom9'}, 'u': {'$set': {'name': 'tom99'}}, 'multi': False, 'upsert': False}], 'action type: updates']
+127.0.0.1 60242 192.168.232.3 27018 sql [[{'isMaster': 1.0, 'forShell': 1.0, '$db': 'admin'}]]
+127.0.0.1 56927 192.168.232.3 27018 sql [{'isMaster': 1, 'client': {'application': {'name': 'MongoDB Shell'}, 'driver': {'name': 'MongoDB Internal Client', 'version': '3.6.4'}, 'os': {'type': 'Darwin', 'name': 'Mac OS X', 'architecture': 'x86_64', 'version': '21.4.0'}}}]
+127.0.0.1 56927 192.168.232.3 27018 sql [[{'getLog': 'startupWarnings', '$db': 'admin'}]]
+127.0.0.1 56927 192.168.232.3 27018 sql [[{'isMaster': 1.0, 'forShell': 1.0, '$db': 'test'}]]
+127.0.0.1 56927 192.168.232.3 27018 sql [[{'isMaster': 1.0, 'forShell': 1.0, '$db': 'test'}]]
+127.0.0.1 56927 192.168.232.3 27018 sql [[{'listDatabases': 1.0, '$db': 'admin'}]]
+127.0.0.1 56927 192.168.232.3 27018 sql [[{'isMaster': 1.0, 'forShell': 1.0, '$db': 'test'}]]
+127.0.0.1 57302 192.168.232.3 27018 sql [{'isMaster': 1, 'client': {'application': {'name': 'MongoDB Shell'}, 'driver': {'name': 'MongoDB Internal Client', 'version': '3.6.4'}, 'os': {'type': 'Darwin', 'name': 'Mac OS X', 'architecture': 'x86_64', 'version': '21.4.0'}}}]
+127.0.0.1 57302 192.168.232.3 27018 sql [[{'isMaster': 1.0, '$db': 'test'}]]
+127.0.0.1 57302 192.168.232.3 27018 sql [[{'saslStart': 1, 'mechanism': 'SCRAM-SHA-1', 'payload': b'n,,n=root,r=SRPS9BWmnFZ1ISoR3xF2b0n8sPOIE2e3', '$db': 'test'}]]
+127.0.0.1 57872 192.168.232.3 27018 sql [{'isMaster': 1, 'client': {'application': {'name': 'MongoDB Shell'}, 'driver': {'name': 'MongoDB Internal Client', 'version': '3.6.4'}, 'os': {'type': 'Darwin', 'name': 'Mac OS X', 'architecture': 'x86_64', 'version': '21.4.0'}}}]
+127.0.0.1 57872 192.168.232.3 27018 sql [[{'isMaster': 1.0, '$db': 'test'}]]
+127.0.0.1 57872 192.168.232.3 27018 sql [[{'saslStart': 1, 'mechanism': 'SCRAM-SHA-1', 'payload': b'n,,n=root,r=/eDKwpXaQqN2q198RxdTaIbKy/6/PSoW', '$db': 'test'}]]
+127.0.0.1 58903 192.168.232.3 27018 sql [{'isMaster': 1, 'client': {'application': {'name': 'MongoDB Shell'}, 'driver': {'name': 'MongoDB Internal Client', 'version': '3.6.4'}, 'os': {'type': 'Darwin', 'name': 'Mac OS X', 'architecture': 'x86_64', 'version': '21.4.0'}}}]
+127.0.0.1 58903 192.168.232.3 27018 sql [[{'isMaster': 1.0, '$db': 'test'}]]
+127.0.0.1 58903 192.168.232.3 27018 sql [[{'saslStart': 1, 'mechanism': 'SCRAM-SHA-1', 'payload': b'n,,n=root,r=jk3RZdxXKSQyvCDm7qNCESkdCEVLCT5Q', '$db': 'test'}]]
+127.0.0.1 59077 192.168.232.3 27018 sql [{'isMaster': 1, 'client': {'application': {'name': 'MongoDB Shell'}, 'driver': {'name': 'MongoDB Internal Client', 'version': '3.6.4'}, 'os': {'type': 'Darwin', 'name': 'Mac OS X', 'architecture': 'x86_64', 'version': '21.4.0'}}}]
+127.0.0.1 59077 192.168.232.3 27018 sql [[{'isMaster': 1.0, '$db': 'test'}]]
+127.0.0.1 59077 192.168.232.3 27018 sql [[{'saslStart': 1, 'mechanism': 'SCRAM-SHA-1', 'payload': b'n,,n=admin,r=QhaaCPnWrvM1JHESJPeYNKdjdfSYNjsM', '$db': 'test'}]]
+127.0.0.1 57792 10.50.121.30 27018 sql [{'isMaster': 1, 'client': {'application': {'name': 'MongoDB Shell'}, 'driver': {'name': 'MongoDB Internal Client', 'version': '3.6.4'}, 'os': {'type': 'Darwin', 'name': 'Mac OS X', 'architecture': 'x86_64', 'version': '21.4.0'}}}]
+127.0.0.1 57792 10.50.121.30 27018 sql [[{'getLog': 'startupWarnings', '$db': 'admin'}]]
+127.0.0.1 57792 10.50.121.30 27018 sql [[{'isMaster': 1.0, 'forShell': 1.0, '$db': 'test'}]]
+127.0.0.1 57792 10.50.121.30 27018 sql [[{'isMaster': 1.0, 'forShell': 1.0, '$db': 'test'}]]
+127.0.0.1 57792 10.50.121.30 27018 cmd [[{'update': 'honey', 'ordered': True, '$db': 'test'}], [{'q': {'name': 'tom9'}, 'u': {'$set': {'name': 'tom99'}}, 'multi': False, 'upsert': False}], 'action type: updates']
+127.0.0.1 57792 10.50.121.30 27018 sql [[{'isMaster': 1.0, 'forShell': 1.0, '$db': 'test'}]]
+127.0.0.1 59173 10.50.121.30 3307 auth root
+127.0.0.1 59173 10.50.121.30 3307 sql select @@version_comment limit 1
+127.0.0.1 59173 10.50.121.30 3307 sql exit
+127.0.0.1 63328 10.50.121.30 3307 auth root
+127.0.0.1 63509 10.50.121.30 3307 auth root
+127.0.0.1 63648 10.50.121.30 3307 auth root
+127.0.0.1 50100 10.50.121.30 27018 cmd [{'isMaster': 1, 'client': {'application': {'name': 'MongoDB Shell'}, 'driver': {'name': 'MongoDB Internal Client', 'version': '3.6.4'}, 'os': {'type': 'Darwin', 'name': 'Mac OS X', 'architecture': 'x86_64', 'version': '21.4.0'}}}]
+127.0.0.1 50100 10.50.121.30 27018 cmd [[{'getLog': 'startupWarnings', '$db': 'admin'}]]
+127.0.0.1 50100 10.50.121.30 27018 cmd [[{'isMaster': 1.0, 'forShell': 1.0, '$db': 'test'}]]
+127.0.0.1 50100 10.50.121.30 27018 cmd [[{'isMaster': 1.0, 'forShell': 1.0, '$db': 'test'}]]
+127.0.0.1 57766 10.50.121.30 27018 cmd [{'isMaster': 1, 'client': {'application': {'name': 'MongoDB Shell'}, 'driver': {'name': 'MongoDB Internal Client', 'version': '3.6.4'}, 'os': {'type': 'Darwin', 'name': 'Mac OS X', 'architecture': 'x86_64', 'version': '21.4.0'}}}]
+127.0.0.1 57766 10.50.121.30 27018 cmd [[{'getLog': 'startupWarnings', '$db': 'admin'}]]
+127.0.0.1 57766 10.50.121.30 27018 cmd [[{'isMaster': 1.0, 'forShell': 1.0, '$db': 'test'}]]
+127.0.0.1 57766 10.50.121.30 27018 cmd [[{'isMaster': 1.0, 'forShell': 1.0, '$db': 'test'}]]
+127.0.0.1 57766 10.50.121.30 27018 cmd [[{'listDatabases': 1.0, '$db': 'admin'}]]
+127.0.0.1 57766 10.50.121.30 27018 cmd [[{'isMaster': 1.0, 'forShell': 1.0, '$db': 'test'}]]
+127.0.0.1 52050 10.50.121.30 3307 auth root
+127.0.0.1 52050 10.50.121.30 3307 sql select @@version_comment limit 1
+127.0.0.1 52050 10.50.121.30 3307 sql show databases
+127.0.0.1 52050 10.50.121.30 3307 sql exit
