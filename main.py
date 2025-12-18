@@ -4,7 +4,9 @@
 # 本地开启socket监听指定端口
 import os
 import sys
-sys.path.append(os.getcwd())
+project_root = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, project_root)
+#sys.path.append(os.getcwd())
 import asyncio
 import logging
 from logging import handlers
@@ -18,6 +20,7 @@ from argparse import ArgumentParser
 from decoder.mongo_decoder import mongo_payload_decoder
 from decoder.mssql_decoder import mssql_payload_decoder
 from decoder.mysql_decoder import mysql_payload_decoder
+from decoder.dameng_decoder import dameng_payload_decoder
 
 
 def create_event_logger(name: str, log_level=logging.INFO):
@@ -56,9 +59,11 @@ event_logger = create_event_logger("event")
 
 
 payload_decoder_map = {
-    1433: mssql_payload_decoder,
-    3306: mysql_payload_decoder,
-    27017: mongo_payload_decoder
+    1433: mssql_payload_decoder,  # mssql
+    3306: mysql_payload_decoder,  # mysql
+    4000: mysql_payload_decoder,  # tidb
+    27017: mongo_payload_decoder,  # mongo
+    5236: dameng_payload_decoder  # dameng
 }
 
 
@@ -83,7 +88,7 @@ class Forwarder:
         ts_reader, ts_writer = await asyncio.open_connection(host=self.ip, port=self.port)
         print("***************  start handle connection...")
         src_ip, src_port = cl_writer.get_extra_info("peername")
-
+        print(f"----src ip: {src_ip}, src port: {src_port}")
         # 在容器化环境中，docker的健康检查会从127.0.0.1发出，需要屏蔽掉
         if src_ip == "127.0.0.1":
             return
@@ -127,8 +132,8 @@ class Forwarder:
                     await sleep(0.1)
                     continue
                 data_type, data_decoded = self.decoder(cl_data)
-                print(f"get type: {data_type}, data_decoded: {data_decoded}")
                 if data_type and data_decoded:
+                    print(f"get type: {data_type}, data_decoded: {data_decoded}")
                     dst_ip, dst_port = cl_reader._transport.get_extra_info("sockname")
                     self.log_event(data_type, data_decoded, dst_ip, dst_port)
                 ts_writer.write(cl_data)
@@ -181,7 +186,7 @@ class TcpServer:
 
 
 if __name__ == "__main__":
-    parser = ArgumentParser(description="sqlserver proxy argument parser")
+    parser = ArgumentParser(description="port forward proxy argument parser")
     parser.add_argument("--proxy_port", help="proxy port", required=True, type=int)
     parser.add_argument("--target_port", help="target port", required=True, type=int)
     parser.add_argument("--target_ip", help="target ip", required=True, type=str)
